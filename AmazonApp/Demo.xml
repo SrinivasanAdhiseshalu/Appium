@@ -3,7 +3,6 @@
 <suite name="Suite1" verbose="1" >
   <test name="Regression" >
     <classes>
-    	<class name="com.ReaderManger.Utilities.preRequestConfig" />
         <class name="testCases.Login_Testcase" />
     </classes>
   </test>
