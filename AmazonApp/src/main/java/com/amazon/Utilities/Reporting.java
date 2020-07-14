@@ -16,6 +16,14 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.AppiumDriver;
 
+
+/**
+ * @author ${SrinivasanAdhiseshalu}
+ *
+ * ${tags}
+ */
+
+
 public class Reporting {
 	AppiumDriver<?>driver=null;
 	
