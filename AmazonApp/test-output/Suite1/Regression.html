@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Regression</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/6/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jun 17 12:37:11 IST 2020</td>
+<td>Started on:</td><td>Tue Jul 14 18:05:12 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>36 seconds (36063 ms)</td>
+<tr><td>Total time:</td><td>78 seconds (78072 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,360 +67,43 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testCases.Login_Testcase.myTest()'><b>myTest</b><br>Test class: testCases.Login_Testcase<br>Parameters: {Status=, Platform=android, Username=, Testrun=Yes, S.No=1, URL=https://www.google.com/, Password=}</td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Could not find adb.exe in C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\platform-tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\emulator\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\bin\adb.exe. Do you have the Android SDK installed at &apos;C:\Users\srini\AppData\Local\Android\Sdk\platform-tools&apos;?
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SRINI-PC&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: driver.version: IntiateDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find adb.exe in C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\platform-tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\emulator\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\bin\adb.exe. Do you have the Android SDK installed at &apos;C:\Users\srini\AppData\Local\Android\Sdk\platform-tools&apos;?
-    at getResponseForW3CError (C:\Users\srini\AppData\Local\Programs\Appium\resources\app\node_modules\appium-base-driver\lib\protocol\errors.js:826:9)
-    at asyncHandler (C:\Users\srini\AppData\Local\Programs\Appium\resources\app\node_modules\appium-base-driver\lib\protocol\protocol.js:447:37)
-    at process._tickCallback (internal/process/next_tick.js:68:7)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SRINI-PC&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: driver.version: IntiateDriver
-	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:208)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:217)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:336)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at io.appium.java_client.DefaultGenericMobileDriver.&lt;init&gt;(DefaultGenericMobileDriver.java:37)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:88)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:98)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:94)
-	at com.ReaderManger.SeleniumFunLibrary.IntiateDriver.&lt;init&gt;(IntiateDriver.java:40)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:29)
-	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:186)
-	... 40 more
-Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not find adb.exe in C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\platform-tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\emulator\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\bin\adb.exe. Do you have the Android SDK installed at &apos;C:\Users\srini\AppData\Local\Android\Sdk\platform-tools&apos;?
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SRINI-PC&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: driver.version: IntiateDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find adb.exe in C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\platform-tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\emulator\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\bin\adb.exe. Do you have the Android SDK installed at &apos;C:\Users\srini\AppData\Local\Android\Sdk\platform-tools&apos;?
-    at getResponseForW3CError (C:\Users\srini\AppData\Local\Programs\Appium\resources\app\node_modules\appium-base-driver\lib\protocol\errors.js:826:9)
-    at asyncHandler (C:\Users\srini\AppData\Local\Programs\Appium\resources\app\node_modules\appium-base-driver\lib\protocol\protocol.js:447:37)
-    at process._tickCallback (internal/process/next_tick.js:68:7)
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
-	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
-	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
-	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
-	at java.util.Spliterators$ArraySpliterator.tryAdvance(Unknown Source)
-	at java.util.stream.ReferencePipeline.forEachWithCancel(Unknown Source)
-	at java.util.stream.AbstractPipeline.copyIntoWithCancel(Unknown Source)
-	at java.util.stream.AbstractPipeline.copyInto(Unknown Source)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
-	at java.util.stream.FindOps$FindOp.evaluateSequential(Unknown Source)
-	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
-	at java.util.stream.ReferencePipeline.findFirst(Unknown Source)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-	... 45 more
-... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1386677799", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1386677799'><pre>org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Could not find adb.exe in C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\platform-tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\emulator\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\bin\adb.exe. Do you have the Android SDK installed at &apos;C:\Users\srini\AppData\Local\Android\Sdk\platform-tools&apos;?
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SRINI-PC&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: driver.version: IntiateDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find adb.exe in C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\platform-tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\emulator\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\bin\adb.exe. Do you have the Android SDK installed at &apos;C:\Users\srini\AppData\Local\Android\Sdk\platform-tools&apos;?
-    at getResponseForW3CError (C:\Users\srini\AppData\Local\Programs\Appium\resources\app\node_modules\appium-base-driver\lib\protocol\errors.js:826:9)
-    at asyncHandler (C:\Users\srini\AppData\Local\Programs\Appium\resources\app\node_modules\appium-base-driver\lib\protocol\protocol.js:447:37)
-    at process._tickCallback (internal/process/next_tick.js:68:7)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SRINI-PC&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: driver.version: IntiateDriver
-	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:208)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:217)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:336)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at io.appium.java_client.DefaultGenericMobileDriver.&lt;init&gt;(DefaultGenericMobileDriver.java:37)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:88)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:98)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:94)
-	at com.ReaderManger.SeleniumFunLibrary.IntiateDriver.&lt;init&gt;(IntiateDriver.java:40)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:29)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.reflect.InvocationTargetException
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:186)
-	... 40 more
-Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not find adb.exe in C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\platform-tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\emulator\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\bin\adb.exe. Do you have the Android SDK installed at &apos;C:\Users\srini\AppData\Local\Android\Sdk\platform-tools&apos;?
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SRINI-PC&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: driver.version: IntiateDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find adb.exe in C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\platform-tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\emulator\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\adb.exe,C:\Users\srini\AppData\Local\Android\Sdk\platform-tools\tools\bin\adb.exe. Do you have the Android SDK installed at &apos;C:\Users\srini\AppData\Local\Android\Sdk\platform-tools&apos;?
-    at getResponseForW3CError (C:\Users\srini\AppData\Local\Programs\Appium\resources\app\node_modules\appium-base-driver\lib\protocol\errors.js:826:9)
-    at asyncHandler (C:\Users\srini\AppData\Local\Programs\Appium\resources\app\node_modules\appium-base-driver\lib\protocol\protocol.js:447:37)
-    at process._tickCallback (internal/process/next_tick.js:68:7)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
-	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
-	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
-	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
-	at java.util.Spliterators$ArraySpliterator.tryAdvance(Unknown Source)
-	at java.util.stream.ReferencePipeline.forEachWithCancel(Unknown Source)
-	at java.util.stream.AbstractPipeline.copyIntoWithCancel(Unknown Source)
-	at java.util.stream.AbstractPipeline.copyInto(Unknown Source)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
-	at java.util.stream.FindOps$FindOp.evaluateSequential(Unknown Source)
-	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
-	at java.util.stream.ReferencePipeline.findFirst(Unknown Source)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-	... 45 more
-</pre></div></td>
-<td>35</td>
-<td>testCases.Login_Testcase@6ca8564a</td></tr>
+<td title='com.amazon.testCases.AddToCart_Testcase.myTest()'><b>myTest</b><br>Test class: com.amazon.testCases.AddToCart_Testcase<br>Parameters: {S.No=1, Input Data=Mask, Platform=android, deviceID=871bcb56, Testrun=Yes}</td>
+<td></td>
+<td>77</td>
+<td>com.amazon.testCases.AddToCart_Testcase@6d4b1c02</td></tr>
 <tr>
-<td title='testCases.Login_Testcase.myTest()'><b>myTest</b><br>Test class: testCases.Login_Testcase<br>Parameters: {Status=, Platform=, Username=, Testrun=, S.No=, URL=, Password=}</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.ReaderManger.BaseDriver.BaseDriver.&lt;init&gt;(BaseDriver.java:42)
-	at pageobjects.OR_Login.&lt;init&gt;(OR_Login.java:17)
-	at pages.Login.&lt;init&gt;(Login.java:23)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:33)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace62803825", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace62803825'><pre>java.lang.NullPointerException
-	at com.ReaderManger.BaseDriver.BaseDriver.&lt;init&gt;(BaseDriver.java:42)
-	at pageobjects.OR_Login.&lt;init&gt;(OR_Login.java:17)
-	at pages.Login.&lt;init&gt;(Login.java:23)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:33)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
+<td title='com.amazon.testCases.AddToCart_Testcase.myTest()'><b>myTest</b><br>Test class: com.amazon.testCases.AddToCart_Testcase<br>Parameters: {S.No=, Input Data=, Platform=, deviceID=, Testrun=}</td>
+<td></td>
 <td>0</td>
-<td>testCases.Login_Testcase@6ca8564a</td></tr>
+<td>com.amazon.testCases.AddToCart_Testcase@6d4b1c02</td></tr>
 <tr>
-<td title='testCases.Login_Testcase.myTest()'><b>myTest</b><br>Test class: testCases.Login_Testcase<br>Parameters: {Status=, Platform=, Username=, Testrun=, S.No=, URL=, Password=}</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.ReaderManger.BaseDriver.BaseDriver.&lt;init&gt;(BaseDriver.java:42)
-	at pageobjects.OR_Login.&lt;init&gt;(OR_Login.java:17)
-	at pages.Login.&lt;init&gt;(Login.java:23)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:33)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1808884231", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1808884231'><pre>java.lang.NullPointerException
-	at com.ReaderManger.BaseDriver.BaseDriver.&lt;init&gt;(BaseDriver.java:42)
-	at pageobjects.OR_Login.&lt;init&gt;(OR_Login.java:17)
-	at pages.Login.&lt;init&gt;(Login.java:23)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:33)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
+<td title='com.amazon.testCases.AddToCart_Testcase.myTest()'><b>myTest</b><br>Test class: com.amazon.testCases.AddToCart_Testcase<br>Parameters: {S.No=, Input Data=, Platform=, deviceID=, Testrun=}</td>
+<td></td>
 <td>0</td>
-<td>testCases.Login_Testcase@6ca8564a</td></tr>
+<td>com.amazon.testCases.AddToCart_Testcase@6d4b1c02</td></tr>
 <tr>
-<td title='testCases.Login_Testcase.myTest()'><b>myTest</b><br>Test class: testCases.Login_Testcase<br>Parameters: {Status=, Platform=, Username=, Testrun=, S.No=, URL=, Password=}</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.ReaderManger.BaseDriver.BaseDriver.&lt;init&gt;(BaseDriver.java:42)
-	at pageobjects.OR_Login.&lt;init&gt;(OR_Login.java:17)
-	at pages.Login.&lt;init&gt;(Login.java:23)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:33)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1480170882", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1480170882'><pre>java.lang.NullPointerException
-	at com.ReaderManger.BaseDriver.BaseDriver.&lt;init&gt;(BaseDriver.java:42)
-	at pageobjects.OR_Login.&lt;init&gt;(OR_Login.java:17)
-	at pages.Login.&lt;init&gt;(Login.java:23)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:33)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
+<td title='com.amazon.testCases.AddToCart_Testcase.myTest()'><b>myTest</b><br>Test class: com.amazon.testCases.AddToCart_Testcase<br>Parameters: {S.No=, Input Data=, Platform=, deviceID=, Testrun=}</td>
+<td></td>
 <td>0</td>
-<td>testCases.Login_Testcase@6ca8564a</td></tr>
+<td>com.amazon.testCases.AddToCart_Testcase@6d4b1c02</td></tr>
 <tr>
-<td title='testCases.Login_Testcase.myTest()'><b>myTest</b><br>Test class: testCases.Login_Testcase<br>Parameters: {Status=, Platform=, Username=, Testrun=, S.No=, URL=, Password=}</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.ReaderManger.BaseDriver.BaseDriver.&lt;init&gt;(BaseDriver.java:42)
-	at pageobjects.OR_Login.&lt;init&gt;(OR_Login.java:17)
-	at pages.Login.&lt;init&gt;(Login.java:23)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:33)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1188623367", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1188623367'><pre>java.lang.NullPointerException
-	at com.ReaderManger.BaseDriver.BaseDriver.&lt;init&gt;(BaseDriver.java:42)
-	at pageobjects.OR_Login.&lt;init&gt;(OR_Login.java:17)
-	at pages.Login.&lt;init&gt;(Login.java:23)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:33)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
+<td title='com.amazon.testCases.AddToCart_Testcase.myTest()'><b>myTest</b><br>Test class: com.amazon.testCases.AddToCart_Testcase<br>Parameters: {S.No=, Input Data=, Platform=, deviceID=, Testrun=}</td>
+<td></td>
 <td>0</td>
-<td>testCases.Login_Testcase@6ca8564a</td></tr>
+<td>com.amazon.testCases.AddToCart_Testcase@6d4b1c02</td></tr>
 <tr>
-<td title='testCases.Login_Testcase.myTest()'><b>myTest</b><br>Test class: testCases.Login_Testcase<br>Parameters: {Status=, Platform=, Username=, Testrun=, S.No=, URL=, Password=}</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.ReaderManger.BaseDriver.BaseDriver.&lt;init&gt;(BaseDriver.java:42)
-	at pageobjects.OR_Login.&lt;init&gt;(OR_Login.java:17)
-	at pages.Login.&lt;init&gt;(Login.java:23)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:33)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace394349340", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace394349340'><pre>java.lang.NullPointerException
-	at com.ReaderManger.BaseDriver.BaseDriver.&lt;init&gt;(BaseDriver.java:42)
-	at pageobjects.OR_Login.&lt;init&gt;(OR_Login.java:17)
-	at pages.Login.&lt;init&gt;(Login.java:23)
-	at testCases.Login_Testcase.myTest(Login_Testcase.java:33)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
+<td title='com.amazon.testCases.AddToCart_Testcase.myTest()'><b>myTest</b><br>Test class: com.amazon.testCases.AddToCart_Testcase<br>Parameters: {S.No=, Input Data=, Platform=, deviceID=, Testrun=}</td>
+<td></td>
 <td>0</td>
-<td>testCases.Login_Testcase@6ca8564a</td></tr>
+<td>com.amazon.testCases.AddToCart_Testcase@6d4b1c02</td></tr>
 </table><p>
 </body>
 </html>

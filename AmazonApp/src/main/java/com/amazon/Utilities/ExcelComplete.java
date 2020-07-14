@@ -15,12 +15,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 /**
  * @author ${SrinivasanAdhiseshalu}
  *
- * ${tags}
  */
 
 public class ExcelComplete {
 	
-	@SuppressWarnings({ "resource", "deprecation" })
+	@SuppressWarnings({ "resource", "deprecation", "incomplete-switch" })
 	public ArrayList<HashMap<String,String>> readExcel(String excel, String sheet) throws Exception{
 		String heading="";
 		ArrayList<HashMap<String,String>> arrMap = new ArrayList<HashMap<String,String>>();
@@ -37,8 +36,8 @@ public class ExcelComplete {
 				String key="";
 				heading = sh.getRow(0).getCell(j).getStringCellValue();
 				Cell cel = row.getCell(j);
-				switch(cel.getCellType()) {
-					case Cell.CELL_TYPE_STRING :
+				switch(cel.getCellTypeEnum()) {
+					case STRING :
 						key = cel.getStringCellValue();
 						break;
 				}

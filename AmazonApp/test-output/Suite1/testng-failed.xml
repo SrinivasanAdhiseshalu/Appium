@@ -3,17 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
   <test name="Regression(failed)">
     <classes>
-      <class name="com.ReaderManger.Utilities.preRequestConfig">
+      <class name="com.amazon.Utilities.preRequestConfig">
         <methods>
-          <include name="endProject"/>
           <include name="startProject"/>
+          <include name="endProject"/>
         </methods>
-      </class> <!-- com.ReaderManger.Utilities.preRequestConfig -->
-      <class name="testCases.Login_Testcase">
+      </class> <!-- com.amazon.Utilities.preRequestConfig -->
+      <class name="com.amazon.testCases.AddToCart_Testcase">
         <methods>
-          <include name="myTest" invocation-numbers="0 1 2 3 4 5"/>
+          <include name="myTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testCases.Login_Testcase -->
+      </class> <!-- com.amazon.testCases.AddToCart_Testcase -->
     </classes>
   </test> <!-- Regression(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

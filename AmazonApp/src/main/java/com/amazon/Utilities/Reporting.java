@@ -20,7 +20,6 @@ import io.appium.java_client.AppiumDriver;
 /**
  * @author ${SrinivasanAdhiseshalu}
  *
- * ${tags}
  */
 
 
@@ -60,7 +59,7 @@ public class Reporting {
 	public ExtentTest startTest(String name)
 	{
 		this.name=name;
-		createPath= new File("./Screenshots_"+name);
+		createPath= new File(path+"/"+"./Screenshots_"+name);
 		createPath.mkdirs();
 		return logger = report.startTest(name);
 	}
@@ -71,7 +70,7 @@ public class Reporting {
 	}
 	
 	public void reportPass(String desc, ExtentTest logger) throws Exception{
-		String desc1 = "<font color ='blue'><b>Description - </font></b>"+"Validation of"+desc+" Icon"+"\n"+"<br>"+
+		String desc1 = "<font color ='blue'><b>Description - </font></b>"+"Validation of "+desc+" Icon"+"\n"+"<br>"+
 				"<font color ='blue'><b>Expected - </font></b>"+desc+" Should be available"+"\n"+"<br>"+
 				"<font color ='blue'><b>Actual - </font></b>"+desc+" Icon is available"+"\n"+"<br>";
 		desc = desc1;
@@ -80,7 +79,7 @@ public class Reporting {
 	}
 	
 	public void reportFail(String desc, ExtentTest logger) throws Exception{
-		String desc1 = "<font color ='blue'><b>Description - </font></b>"+"Validation of"+desc+" Icon"+"\n"+"<br>"+
+		String desc1 = "<font color ='blue'><b>Description - </font></b>"+"Validation of "+desc+" Icon"+"\n"+"<br>"+
 				"<font color ='blue'><b>Expected - </font></b>"+desc+" Should be available"+"\n"+"<br>"+
 				"<font color ='red'><b>Failed - </font></b>"+desc+" Icon is NOT available"+"\n"+"<br>";
 		desc = desc1;
@@ -93,9 +92,5 @@ public class Reporting {
 		report.flush();
 	}
 
-	
-	
-	
-	
 	
 }

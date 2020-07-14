@@ -14,27 +14,22 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class IntiateDriver {
 	
-	public static HashMap<String,String>data=null;
-	AppiumDriver<?>driver=null;
+	AppiumDriver<MobileElement>driver=null;
 	DesiredCapabilities dc=new DesiredCapabilities();
 	
 	
 	public IntiateDriver(String deviceid,String devicePlatform) throws Exception
 	{
-		
 		try
 		{
-				//DesiredCapabilities dc=new DesiredCapabilities();
-				if(!deviceid.contentEquals(""))
-					dc.setCapability("appium:version", deviceid);
-				if(devicePlatform.equalsIgnoreCase("android"))
-				{
+			if(devicePlatform.equalsIgnoreCase("android"))
+			{
 				dc.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
 				dc.setCapability("newCommandTimeout",60 * 5);
-				dc.setCapability("appPackage","com.google.android.apps.messaging" );
-				dc.setCapability("appActivity","com.google.android.apps.messaging.ui.ConversationListActivity" );
-				dc.setCapability("appium:platform", "ANDROID");
-				dc.setCapability("deviceName", "Android Simulator");
+				dc.setCapability("appPackage","in.amazon.mShop.android.shopping" );
+				dc.setCapability("appActivity","com.amazon.mShop.home.HomeActivity" );
+				dc.setCapability("platformName", "ANDROID");
+				dc.setCapability("deviceName",deviceid);
 				dc.setCapability("automationName", "uiautomator2");
 				
 				driver=new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"),dc);
@@ -45,19 +40,17 @@ public class IntiateDriver {
 				dc.setCapability("appium:platform", "MAC");
 				dc.setCapability("platformName", "ios");
 				dc.setCapability("deviceName", "iPhone simulator");
-				dc.setCapability("bundleId", "com.hidglobal.pacs.readermanager");
-				dc.setCapability("appName", "Reader Manager");
+				dc.setCapability("bundleId", "");
 				dc.setCapability("noReset", true);
 				dc.setCapability("useNewWDA", true);
 				dc.setCapability("autoLaunch", false);
 				dc.setCapability("platformVersion", "12.0");
 				
-					}
-				}
-		catch(Exception e )
-		{
-		e.printStackTrace();
-		throw e;	
+			}
+		}
+		catch(Exception e ){
+			e.printStackTrace();
+			throw e;	
 		}
 	
 	}

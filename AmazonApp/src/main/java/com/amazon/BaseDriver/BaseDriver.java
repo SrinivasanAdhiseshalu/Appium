@@ -6,8 +6,10 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.ScreenOrientation;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -30,9 +32,6 @@ public abstract class BaseDriver<File> {
 	HashMap<String ,String> data;
 	protected String platform= "";
 	
-	
-	
-	
 	protected BaseDriver(AppiumDriver<?> driver,HashMap<String,String>data)
 	{
 		this.driver=driver;
@@ -42,9 +41,9 @@ public abstract class BaseDriver<File> {
 		this.data=data;
 		platform=data.get("Platform");
 		if(platform.equalsIgnoreCase("Android"))
-		swipeDuration=1000;
+			swipeDuration=1000;
 		else
-		swipeDuration=100;
+			swipeDuration=100;
 	}
 	protected void click(MobileElement element)throws Exception
 	{
@@ -59,45 +58,25 @@ public abstract class BaseDriver<File> {
 		}
 		ele.click();
 	}
-	//This method is used to check the element is Enabled
-	protected boolean isEnabled(MobileElement element)
-	{
-		try
-		{
-		return element.isEnabled();
-		}
-		catch(NoSuchElementException e)
-		{
-		return false;
-		}		
-	}
-		
 
 	//This method is used to check the element is Displayed
 	protected boolean isDisplayed(MobileElement element)
 	{
 		try
 		{
-		return element.isDisplayed();
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(element));
+			return element.isDisplayed();
 		}
-		catch(NoSuchElementException e)
-		{
-		return false;
+		catch(TimeoutException e){
+			return false;
+		}
+		catch(ElementNotVisibleException e) {
+			return false;
+		}
+		catch(NoSuchElementException e){
+			return false;
 		}		
 	}
-	
-	//This method is used to check the element is Selected
-		protected boolean isSelected(MobileElement element)
-		{
-			try
-			{
-			return element.isSelected();
-			}
-			catch(NoSuchElementException e)
-			{
-			return false;
-			}		
-		}
 		
 	//This method is used to get a particular attribute for the specified element
 	protected String getAttribute(MobileElement element,String propertyName)
@@ -139,6 +118,58 @@ public abstract class BaseDriver<File> {
 		}
 	}
 	
+	protected void swipeHorizontalUP(int swipeCount, MobileElement element) throws Exception{
+		try {
+			for(int i=1;i<=swipeCount;i++) {
+				Dimension d = driver.manage().window().getSize();
+				int width = d.getWidth();
+				int height = d.getHeight();
+				
+				int middle = width/2;
+				int startPoint = (int) (height*0.7);
+				int endPoint = (int) (height*0.3);
+				
+				new TouchAction(driver)
+				.press(PointOption.point(middle, startPoint))
+				.waitAction(WaitOptions.waitOptions(Duration.ofMillis(swipeDuration)))
+				.moveTo(PointOption.point(middle, endPoint))
+				.release().perform();
+				
+				Thread.sleep(1000);
+				if(isDisplayed(element))
+					break;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	protected void swipeHorizontalDown(int swipeCount, MobileElement element) throws Exception{
+		try {
+			for(int i=1;i<=swipeCount;i++) {
+				Dimension d = driver.manage().window().getSize();
+				int width = d.getWidth();
+				int height = d.getHeight();
+				
+				int middle = width/2;
+				int startPoint = (int) (height*0.3);
+				int endPoint = (int) (height*0.7);
+				
+				new TouchAction(driver)
+				.press(PointOption.point(middle, startPoint))
+				.waitAction(WaitOptions.waitOptions(Duration.ofMillis(swipeDuration)))
+				.moveTo(PointOption.point(middle, endPoint))
+				.release().perform();
+				
+				Thread.sleep(1000);
+				if(isDisplayed(element))
+					break;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	protected void clearText(MobileElement element)
 	{
 		try
@@ -152,31 +183,6 @@ public abstract class BaseDriver<File> {
 		}
 		
 		}
-
-	//This method is used to launch the app
-	protected void launch_App()throws Exception
-	{
-		try
-		{
-			driver.launchApp();
-		}
-		catch (Exception e) {
-			System.out.println("The app is not launching due to launch failed");
-		}
-	}
-	
-	//This method is used to reset the application
-	protected void resetApp()throws Exception
-	{
-		try
-		{
-			driver.resetApp();
-		}
-		catch (Exception e) {
-			System.out.println("Reset failed to execute");
-		}
-	}
-
 	
 	
 		//This method is used to hide keyboard in android	
@@ -192,8 +198,6 @@ public abstract class BaseDriver<File> {
 		System.out.println("The hidekeyboard button for ios is not working");
 		}
 	}
-
-	
 
 		//This method is used to get the context of the page
 	protected String getContext()
