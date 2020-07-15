@@ -1,4 +1,4 @@
-package com.amazon.pages;
+package com.amazon.Pages;
 
 import java.util.HashMap;
 
@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import com.amazon.PageObjects.OR_Amazon;
+import com.amazon.PageObjects.OR_AmazonAddToCart;
 import com.amazon.Utilities.Reporting;
 import com.relevantcodes.extentreports.ExtentTest;
 
@@ -16,7 +16,7 @@ import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class AddToCart extends OR_Amazon{
+public class AddToCart extends OR_AmazonAddToCart{
 	@SuppressWarnings("rawtypes")
 	AppiumDriver driver=null;
 	HashMap<String,String> data = new HashMap<String,String>();

@@ -26,18 +26,13 @@ import io.appium.java_client.touch.offset.PointOption;
 public abstract class BaseDriver<File> {
 	public AppiumDriver<?> driver;
 	Map<String,Object> parms=new HashMap<>();
-	int height=0;int width=0;
-	Dimension dimension;
-	int timeout=90,swipeDuration=0;
+	int swipeDuration=0;
 	HashMap<String ,String> data;
 	protected String platform= "";
 	
 	protected BaseDriver(AppiumDriver<?> driver,HashMap<String,String>data)
 	{
 		this.driver=driver;
-		dimension=driver.manage().window().getSize();
-		height=dimension.height;
-		width=dimension.width;
 		this.data=data;
 		platform=data.get("Platform");
 		if(platform.equalsIgnoreCase("Android"))

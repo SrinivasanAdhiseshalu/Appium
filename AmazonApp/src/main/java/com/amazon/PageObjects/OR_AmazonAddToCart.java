@@ -9,10 +9,10 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 @SuppressWarnings("rawtypes")
-public class OR_Amazon extends BaseDriver{
+public class OR_AmazonAddToCart extends BaseDriver{
 	
 	@SuppressWarnings({"unchecked" })
-	protected OR_Amazon(AppiumDriver driver, HashMap data) {
+	protected OR_AmazonAddToCart(AppiumDriver driver, HashMap data) {
 		super(driver, data);
 	}
 	
@@ -31,7 +31,7 @@ public class OR_Amazon extends BaseDriver{
 	@AndroidFindBy(xpath="//android.view.View[@resource-id='search']/descendant::android.view.View[contains(@content-desc,'F Gear Standard Size Mask for Adult Color Black F95 Safeguard 7 layer')]")
 	protected MobileElement selectMask;
 
-	@AndroidFindBy(xpath="//*[resource-id='in.amazon.mShop.android.shopping:id/loc_ux_gps_auto_detect']")
+	@AndroidFindBy(xpath="//*[@resource-id='in.amazon.mShop.android.shopping:id/loc_ux_gps_auto_detect']")
 	protected MobileElement btn_CurrentLoc;
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[contains(@text,'Allow access')]")

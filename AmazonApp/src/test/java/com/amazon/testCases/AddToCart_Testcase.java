@@ -9,9 +9,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.amazon.BaseDriver.IntiateDriver;
+import com.amazon.Pages.AddToCart;
 import com.amazon.Utilities.ExcelComplete;
 import com.amazon.Utilities.Reporting;
-import com.amazon.pages.AddToCart;
 import com.relevantcodes.extentreports.ExtentTest;
 
 import io.appium.java_client.AppiumDriver;
