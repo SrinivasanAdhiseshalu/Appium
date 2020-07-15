@@ -1,4 +1,4 @@
-package com.amazon.BaseDriver;
+package com.amazon.FunctionalLibrary;
 
 import java.net.URL;
 import java.util.HashMap;

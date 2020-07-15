@@ -2,7 +2,7 @@ package com.amazon.PageObjects;
 
 import java.util.HashMap;
 
-import com.amazon.BaseDriver.BaseDriver;
+import com.amazon.FunctionalLibrary.BaseDriver;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;

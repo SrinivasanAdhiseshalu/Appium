@@ -1,4 +1,4 @@
-package com.amazon.BaseDriver;
+package com.amazon.FunctionalLibrary;
 
 import java.time.Duration;
 import java.util.HashMap;
