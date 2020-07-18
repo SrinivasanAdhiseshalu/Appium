@@ -3,11 +3,11 @@ package com.amazon.Utilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-public class preRequestConfig {
+public class PreRequestConfig {
 	
 	@BeforeSuite
 	void startProject(){
-		Reporting.StartReporting();
+		Reporting.startReporting();
 	}
 	
 

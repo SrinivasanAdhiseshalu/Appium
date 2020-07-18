@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import com.amazon.FunctionalLibrary.IntiateDriver;
 import com.amazon.Pages.AddToCart;
-import com.amazon.Utilities.ExcelComplete;
+import com.amazon.Utilities.ExcelDataExtraction;
 import com.amazon.Utilities.Reporting;
 import com.relevantcodes.extentreports.ExtentTest;
 
@@ -51,7 +51,7 @@ public class AddToCart_Testcase {
 	@DataProvider(name="amazon")
 	public Iterator<Object[]> getData()throws Exception{
 		ArrayList<HashMap<String,String>> arrHashMap = new ArrayList<HashMap<String,String>>();
-		ExcelComplete excel = new ExcelComplete();
+		ExcelDataExtraction excel = new ExcelDataExtraction();
 		arrHashMap = excel.readExcel("./Files/AmazonCompleteDataSheet.xlsx","Login");
 		List<Object[]> dataArr = new ArrayList<Object[]>();
 		for(HashMap data:arrHashMap) {

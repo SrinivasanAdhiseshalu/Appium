@@ -23,13 +23,14 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
-public abstract class BaseDriver<File> {
+public abstract class BaseDriver {
 	public AppiumDriver<?> driver;
 	Map<String,Object> parms=new HashMap<>();
-	int swipeDuration=0;
+	int swipeDuration=0,timeOut=30;
 	HashMap<String ,String> data;
 	protected String platform= "";
 	
+	//Constructor
 	protected BaseDriver(AppiumDriver<?> driver,HashMap<String,String>data)
 	{
 		this.driver=driver;
@@ -40,42 +41,63 @@ public abstract class BaseDriver<File> {
 		else
 			swipeDuration=100;
 	}
-	protected void click(MobileElement element)throws Exception
-	{
+	
+	//This method is used to click the element
+	protected void click(MobileElement element)throws Exception{
 		MobileElement ele=element;
-		try
-		{
-			new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(ele));
+		try{
+			new WebDriverWait(driver, timeOut).until(ExpectedConditions.elementToBeClickable(ele));
 		}
-		catch(Exception e)
-		{
+		catch(Exception e){
 			throw new Exception("Click failed for element in page");
 		}
 		ele.click();
 	}
 
 	//This method is used to check the element is Displayed
-	protected boolean isDisplayed(MobileElement element)
-	{
-		try
-		{
-			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(element));
+	protected boolean isDisplayed(MobileElement element){
+		try{
+			new WebDriverWait(driver, timeOut).until(ExpectedConditions.visibilityOf(element));
+			System.out.println("The Object identifiaction completed for the element "+element);
 			return element.isDisplayed();
 		}
 		catch(TimeoutException e){
+			System.out.println("The Object identifiaction Failed for the element "+element+" due to TimeoutException");
 			return false;
 		}
 		catch(ElementNotVisibleException e) {
+			System.out.println("The Object identifiaction Failed for the element "+element+" due to ElementNotVisibleException");
 			return false;
 		}
 		catch(NoSuchElementException e){
+			System.out.println("The Object identifiaction Failed for the element "+element+" due to NoSuchElementException");
 			return false;
 		}		
 	}
+	
+	//This method is used to check the element is Displayed with dynamic time - Polymorphism
+		protected boolean isDisplayed(MobileElement element,int time){
+			try{
+				new WebDriverWait(driver, time).until(ExpectedConditions.visibilityOf(element));
+				System.out.println("The Object identifiaction completed for the element "+element);
+				return element.isDisplayed();
+			}
+			catch(TimeoutException e){
+				System.out.println("The Object identifiaction Failed for the element "+element+" due to TimeoutException");
+				return false;
+			}
+			catch(ElementNotVisibleException e) {
+				System.out.println("The Object identifiaction Failed for the element "+element+" due to ElementNotVisibleException");
+				return false;
+			}
+			catch(NoSuchElementException e){
+				System.out.println("The Object identifiaction Failed for the element "+element+" due to NoSuchElementException");
+				return false;
+			}
+		}
 		
 	//This method is used to get a particular attribute for the specified element
-	protected String getAttribute(MobileElement element,String propertyName)
-	{
+	protected String getAttribute(MobileElement element,String propertyName){
 		try {
 			return element.getAttribute(propertyName);
 		}catch (Exception e) {
@@ -83,8 +105,7 @@ public abstract class BaseDriver<File> {
 		}
 	}
 	//This method is used to get a text for the specified element
-	protected String getText(MobileElement element)
-	{
+	protected String getText(MobileElement element){
 		try {
 			return element.getText();
 		}
@@ -94,14 +115,12 @@ public abstract class BaseDriver<File> {
 	}
 	
 	//This method is used to set the text for the specified element
-	protected void setText(MobileElement element,String value)throws InterruptedException
-	{
-		try
-		{
+	protected void setText(MobileElement element,String value)throws InterruptedException{
+		try{
 			if(isDisplayed(element))
 			{
-			element.sendKeys(value);
-			Thread.sleep(10000);
+				element.sendKeys(value);
+				Thread.sleep(2000);
 			}
 		else
 		{
@@ -113,6 +132,7 @@ public abstract class BaseDriver<File> {
 		}
 	}
 	
+	///This method is used to swipe horizontal UP and break the loop using isDisplayed
 	protected void swipeHorizontalUP(int swipeCount, MobileElement element) throws Exception{
 		try {
 			for(int i=1;i<=swipeCount;i++) {
@@ -139,6 +159,7 @@ public abstract class BaseDriver<File> {
 		}
 	}
 	
+	//This method is used to swipe horizontal Down and break the loop using isDisplayed
 	protected void swipeHorizontalDown(int swipeCount, MobileElement element) throws Exception{
 		try {
 			for(int i=1;i<=swipeCount;i++) {
@@ -165,45 +186,38 @@ public abstract class BaseDriver<File> {
 		}
 	}
 	
-	protected void clearText(MobileElement element)
-	{
-		try
-		{
+	//This method is used to clear the text
+	protected void clearText(MobileElement element){
+		try{
 			if(element.isDisplayed())
 			element.clear();
 		}
 		catch (Exception e) {
-			
 			System.out.println("The Element is not clear due to no such element found");
 		}
 		
-		}
+	}
 	
 	
-		//This method is used to hide keyboard in android	
-	protected void Minimizekeyboard()throws Exception
-	{
-		try
-		{
+	//This method is used to hide keyboard in android	
+	protected void Minimizekeyboard()throws Exception{
+		try{
 			driver.hideKeyboard();
 			
 		}
-		catch (Exception e) {
-			
+		catch (Exception e) {			
 		System.out.println("The hidekeyboard button for ios is not working");
 		}
 	}
 
-		//This method is used to get the context of the page
-	protected String getContext()
-	{
+	//This method is used to get the context of the page Encapsulation
+	protected String getContext(){
 		return driver.getContext();
 	}
 		
 
-	//This method is used to set the context of the page
-	protected void SetContext(String context)
-	{
+	//This method is used to set the context of the page Encapsulation
+	protected void SetContext(String context){
 		driver.context(context);
 	}	
 }

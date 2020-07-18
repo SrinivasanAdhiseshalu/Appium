@@ -17,14 +17,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  */
 
-public class ExcelComplete {
+public class ExcelDataExtraction {
 	
-	@SuppressWarnings({ "resource", "deprecation", "incomplete-switch" })
+	@SuppressWarnings({ "resource", "incomplete-switch" })
 	public ArrayList<HashMap<String,String>> readExcel(String excel, String sheet) throws Exception{
 		String heading="";
 		ArrayList<HashMap<String,String>> arrMap = new ArrayList<HashMap<String,String>>();
 		FileInputStream fis = new FileInputStream(new File(excel));
-		//XSSFWorkbook wb1 = new XSSFWorkbook(fis);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sh = wb.getSheet(sheet);
 		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();

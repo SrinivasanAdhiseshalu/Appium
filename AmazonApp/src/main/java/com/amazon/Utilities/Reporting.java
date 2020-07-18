@@ -48,7 +48,7 @@ public class Reporting {
 		return imagePath;
 	}
 	
-	public static void StartReporting()
+	public static void startReporting()
 	{
 		path=new File("./Report/"+sdf.format(date));
 		path.mkdirs();
