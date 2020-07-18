@@ -122,17 +122,13 @@ public abstract class BaseDriver {
 	//This method is used to set the text for the specified element
 	protected void setText(MobileElement element,String value)throws InterruptedException{
 		try{
-			if(isDisplayed(element))
-			{
+			if(isDisplayed(element)){
 				element.sendKeys(value);
-				Thread.sleep(2000);
 			}
-		else
-		{
-			System.out.println("Element not found for SetText");
-		}
-	}
-		catch (Exception e1	) {
+			else{
+				System.out.println("Element not found for SetText");
+			}
+		}catch (Exception e1) {
 			e1.printStackTrace();
 		}
 	}
@@ -207,13 +203,9 @@ public abstract class BaseDriver {
 	@SuppressWarnings("rawtypes")
 	public String getValueFromPropertyFile(String propertyFile,String key) throws Exception{
 		String value="";
-		try {
-			if(propertyFile.contains(".properties"))
-				propertyFile = propertyFile.replace(".properties", "");// if a tester provides the property file with Extension this will remove the Extension
+		if(propertyFile.contains(".properties"))
+			propertyFile = propertyFile.replace(".properties", "");// if a tester provides the property file with Extension this will remove the Extension
 																	   // In order to avoid Exceptions
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
 		try {
 			Properties properties = new Properties();
 			File file = new File("./Files/"+propertyFile+".properties");
