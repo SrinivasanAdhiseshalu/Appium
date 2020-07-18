@@ -225,6 +225,7 @@ public abstract class BaseDriver {
 	}
 	
 	//This method is used to press Enter key in keyboard	
+	@SuppressWarnings("deprecation")
 	protected void pressKeyboardEnter() throws Exception{
 		try {
 			driver.getKeyboard().sendKeys(Keys.ENTER);
