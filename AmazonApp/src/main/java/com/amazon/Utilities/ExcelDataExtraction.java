@@ -39,6 +39,9 @@ public class ExcelDataExtraction {
 					case STRING :
 						key = cel.getStringCellValue();
 						break;
+					case BLANK:
+						key = "";
+						break;
 				}
 				hm.put(heading, key);
 			}
