@@ -58,7 +58,7 @@ public class AddToCart extends OR_AmazonAddToCart{
 				Thread.sleep(1500);
 				setText(input_SearchBox, data.get("Input Data"));
 				Thread.sleep(1000);
-				driver.getKeyboard().sendKeys(Keys.ENTER);
+				pressKeyboardEnter();
 			}
 			if(validateFields(selectMask, "F Gear Standard Size Mask for Adult Color Black F95",true)) {
 				data.put("expected", getAttribute(selectMask, "content-desc"));

@@ -1,12 +1,17 @@
 package com.amazon.FunctionalLibrary;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.time.Duration;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Properties;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.TimeoutException;
@@ -198,15 +203,51 @@ public abstract class BaseDriver {
 		
 	}
 	
+	//This Method returns the value of the corresponding key provided in the parameter
+	@SuppressWarnings("rawtypes")
+	public String getValueFromPropertyFile(String propertyFile,String key) throws Exception{
+		String value="";
+		try {
+			if(propertyFile.contains(".properties"))
+				propertyFile = propertyFile.replace(".properties", "");// if a tester provides the property file with Extension this will remove the Extension
+																	   // In order to avoid Exceptions
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			Properties properties = new Properties();
+			File file = new File("./Files/"+propertyFile+".properties");
+			FileInputStream reader=new FileInputStream(file); 
+			properties.load(reader);
+			Enumeration arr = properties.keys();
+			while(arr.hasMoreElements()){
+				if(arr.nextElement().toString().equalsIgnoreCase(key)){
+					value = properties.getProperty(key);
+					break;
+				}
+			}
+		}catch(Exception e) {
+			throw new Exception("The given Key "+key+" is Not found in the OR");
+		}
+		return value;
+	}
+	
+	//This method is used to press Enter key in keyboard	
+	protected void pressKeyboardEnter() throws Exception{
+		try {
+			driver.getKeyboard().sendKeys(Keys.ENTER);
+		}catch(Exception e) {
+			System.out.println("Press Enter using Keyboard is not working");
+		}
+	}
 	
 	//This method is used to hide keyboard in android	
 	protected void Minimizekeyboard()throws Exception{
 		try{
 			driver.hideKeyboard();
-			
 		}
 		catch (Exception e) {			
-		System.out.println("The hidekeyboard button for ios is not working");
+			System.out.println("The hidekeyboard button for ios is not working");
 		}
 	}
 
