@@ -48,7 +48,7 @@ public class AddToCart_Testcase {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	@DataProvider(name="amazon")
+	@DataProvider(name="amazon",parallel = false)
 	public Iterator<Object[]> getData()throws Exception{
 		ArrayList<HashMap<String,String>> arrHashMap = new ArrayList<HashMap<String,String>>();
 		ExcelDataExtraction excel = new ExcelDataExtraction();
