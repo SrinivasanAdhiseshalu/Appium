@@ -23,6 +23,7 @@ public class AddToCart extends OR_AmazonAddToCart{
 	Reporting report=null;
 	ExtentTest logger = null;
 	
+	//Constructor
 	@SuppressWarnings("rawtypes")
 	public AddToCart(AppiumDriver driver, HashMap<String,String> data,ExtentTest logger,Reporting report) {
 		super(driver, data);
@@ -33,6 +34,8 @@ public class AddToCart extends OR_AmazonAddToCart{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
+	
+	//launch screen validation method
 	public void launchtoSearchScreen() throws Exception{
 		try {
 			if(validateFields(chooseLang, "Language Selection",true))
@@ -46,6 +49,7 @@ public class AddToCart extends OR_AmazonAddToCart{
 		}
 	}
 	
+	//Search product in amazon method
 	@SuppressWarnings("deprecation")
 	public void searchProduct() throws Exception{
 		try {
@@ -79,6 +83,7 @@ public class AddToCart extends OR_AmazonAddToCart{
 		}
 	}
 	
+	//Addn an item to cart in amazon method
 	public void addItemToCart() throws Exception{
 		try {
 			/*if(validateFields(btn_CurrentLoc, "Current Location",false))
@@ -98,6 +103,7 @@ public class AddToCart extends OR_AmazonAddToCart{
 		}
 	}
 	
+	//validate cart in amazon method
 	public void validateCart() throws Exception{
 		try {
 			
@@ -118,6 +124,7 @@ public class AddToCart extends OR_AmazonAddToCart{
 		}
 	}
 	
+	//common field to validate all the fields
 	boolean validateFields(MobileElement ele, String desc,boolean exception) throws Exception{
 		boolean flag = false;
 		try {
