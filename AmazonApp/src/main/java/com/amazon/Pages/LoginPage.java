@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import org.openqa.selenium.support.PageFactory;
 
-import com.amazon.PageObjects.BasePage;
 import com.amazon.Utilities.Reporting;
 import com.relevantcodes.extentreports.ExtentTest;
 
@@ -28,6 +27,14 @@ public class LoginPage extends BasePage{
 	@AndroidFindBy(xpath="//*[@resource-id='in.amazon.mShop.android.shopping:id/sign_in_button']")
 	protected MobileElement btn_SignIn;
 	
+	/**
+	 * This is Constructor
+	 * @param AppiumDriver : will define the driver object
+	 * @param HashMap<String,String> : used to get the data from the excel
+	 * @param Reporting : will define the pass and fail step in report
+	 * @param logger : is used to log the test step in reporting
+	 * @throws Exception 
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public LoginPage(AppiumDriver driver, HashMap<String,String> data,Reporting report,ExtentTest logger) {
 		super(data);

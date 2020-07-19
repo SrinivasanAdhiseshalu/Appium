@@ -14,8 +14,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.amazon.PageObjects.BasePage;
 import com.amazon.Pages.AddToCart;
+import com.amazon.Pages.BasePage;
 import com.amazon.Pages.LoginPage;
 import com.amazon.Pages.SearchProduct;
 import com.amazon.Utilities.ExcelDataExtraction;
@@ -33,6 +33,11 @@ public class AddToCart_Testcase {
 	Reporting report=null;
 	BasePage basepage=null;
 	
+	/**
+	 * This method is used to initialize Reporting and Driver object before starting the test case
+	 * @param NA
+	 * @throws Exception
+	 */
 	@BeforeTest
 	public void beforeTest() throws Exception{
 		ArrayList<HashMap<String,String>> arrHashMap = new ArrayList<HashMap<String,String>>();
@@ -50,6 +55,11 @@ public class AddToCart_Testcase {
 		logger = report.startTest("Amazon Add To Cart");
 	}
 	
+	/**
+	 * This method is used to run the test cases
+	 * @param HashMap : read the necessary values from the Excel
+	 * @throws Exception
+	 */
 	@Test(dataProvider="amazon")
 	public void test(HashMap<String,String> data) throws Exception{
 		if(data.get("Testrun").equalsIgnoreCase("yes") && data.get("TestCase Name").equalsIgnoreCase("add to cart")) {
@@ -69,12 +79,22 @@ public class AddToCart_Testcase {
 	
 	}
 	
+	/**
+	 * This method is used to close the app and the driver object
+	 * @param NA
+	 * @throws Exception
+	 */
 	@AfterTest
 	public void afterTest() throws Exception{
 		driver.closeApp();
 		driver.close();
 	}
 	
+	/**
+	 * This method is used to read the data's from the excel and iterate through List Iterator 
+	 * @param NA
+	 * @throws Exception
+	 */
 	@SuppressWarnings("rawtypes")
 	@DataProvider(name="amazon",parallel = false)
 	public Iterator<Object[]> getData()throws Exception{

@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import org.openqa.selenium.support.PageFactory;
 
-import com.amazon.PageObjects.BasePage;
 import com.amazon.Utilities.Reporting;
 import com.relevantcodes.extentreports.ExtentTest;
 
@@ -26,6 +25,14 @@ public class SearchProduct extends BasePage{
 	@AndroidFindBy(xpath="//android.view.View[@resource-id='search']/descendant::android.view.View[contains(@content-desc,'F Gear Standard Size Mask for Adult Color Black F95 Safeguard 7 layer')]")
 	protected MobileElement selectMask;
 	
+	/**
+	 * This is Constructor
+	 * @param AppiumDriver : will define the driver object
+	 * @param HashMap<String,String> : used to get the data from the excel
+	 * @param Reporting : will define the pass and fail step in report
+	 * @param logger : is used to log the test step in reporting
+	 * @throws Exception 
+	 */
 	public SearchProduct(AppiumDriver<MobileElement> driver, HashMap<String, String> data, Reporting report,ExtentTest logger) {
 		super(data);
 		this.driver = driver;

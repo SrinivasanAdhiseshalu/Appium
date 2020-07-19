@@ -25,9 +25,8 @@ import io.appium.java_client.MobileElement;
 
 
 public class Reporting {
+	
 	AppiumDriver<MobileElement>driver=null;
-	
-	
 	public static ExtentReports report;
 	public static ExtentTest logger;
 	public static SimpleDateFormat sdf = new SimpleDateFormat("dd_MMM_yyy_h_mm_s");
@@ -38,11 +37,21 @@ public class Reporting {
 	String name;
 	HashMap<String,Integer> count = new HashMap<String,Integer>();
 	
+	/**
+	 * Constructor
+	 * @param AppiumDriver : to get the driver object
+	 */
 	public Reporting(AppiumDriver<MobileElement>driver) {
 		this.driver=driver;
 		count.put("sno", 1);
 	}
 	
+	/**
+	 * This method is used to take screenshot
+	 * @param NA
+	 * @return File : returns the image path
+	 * @throws Exception 
+	 */
 	File screenshot() throws Exception{
 		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File imagePath = new File(createPath.getAbsolutePath()+"/"+count.get("sno")+".png");
@@ -51,12 +60,23 @@ public class Reporting {
 		return imagePath;
 	}
 	
+	/**
+	 * This method is used to start the reporting
+	 * @param NA
+	 */
 	public static void startReporting(){
 		path=new File(System.getProperty("user.dir")+"/Report/"+sdf.format(date));
 		path.mkdirs();
 		report=new ExtentReports(path.getAbsolutePath()+"/OverallReport.html");
 	}
 
+	
+	/**
+	 * This method is used to start the test case
+	 * @param String : will define the name of the test case intent
+	 * @return logger file of the reporting
+	 * @throws Exception 
+	 */
 	public ExtentTest startTest(String name){
 		try {
 			this.name=name;
@@ -70,14 +90,29 @@ public class Reporting {
 		return logger = report.startTest(name);
 	}
 	
+	/**
+	 * This method is used to return the log file path
+	 * @param NA
+	 * @return logger file of the reporting
+	 * @throws Exception 
+	 */
 	public static File returnLogtFilePath() throws Exception{
 		return logFile;
 	}
 	
+	/**
+	 * This method is used to end the test case
+	 * * @param NA
+	 */
 	public void endTest(){
 		report.endTest(logger);
 	}
 	
+	/**
+	 * This method is used to Pass the test step
+	 * @param String : will define the description of the text
+	 * @param ExtentTest : will log the status of each step
+	 */
 	public void reportPass(String desc, ExtentTest logger) throws Exception{
 		String desc1 = "<font color ='blue'><b>Description - </font></b>"+"Validation of "+desc+" Icon"+"\n"+"<br>"+
 				"<font color ='blue'><b>Expected - </font></b>"+desc+" Should be available"+"\n"+"<br>"+
@@ -87,6 +122,11 @@ public class Reporting {
 		logger.log(LogStatus.PASS, desc, temp);
 	}
 	
+	/**
+	 * This method is used to Fail the test step
+	 * @param String : will define the description of the text
+	 * @param ExtentTest : will log the status of each step
+	 */
 	public void reportFail(String desc, ExtentTest logger) throws Exception{
 		String desc1 = "<font color ='blue'><b>Description - </font></b>"+"Validation of "+desc+" Icon"+"\n"+"<br>"+
 				"<font color ='blue'><b>Expected - </font></b>"+desc+" Should be available"+"\n"+"<br>"+
@@ -96,6 +136,10 @@ public class Reporting {
 		logger.log(LogStatus.FAIL, desc, temp);
 	}
 	
+	/**
+	 * This method is used to end the reporting
+	 * @param NA
+	 */
 	public static void endReporting(){
 		report.endTest(logger);
 		report.flush();

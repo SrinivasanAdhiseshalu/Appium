@@ -1,4 +1,4 @@
-package com.amazon.PageObjects;
+package com.amazon.Pages;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -44,11 +44,11 @@ public class BasePage {
 	HashMap<String ,String> data;
 	protected String platform= "";
 	FileWriter fw = null;
-	//Constructor
-	public BasePage() {
-		
-	}
-	//Constructor with arguments
+
+	/**
+	 * This is Constructor
+	 * @param HashMap : will define the values from Excel
+	 */
 	public BasePage(HashMap<String,String>data){
 		this.data=data;
 		platform=data.get("Platform");
@@ -57,8 +57,11 @@ public class BasePage {
 		else
 			swipeDuration=100;
 	}
-	
-	//This method is used to create Driver object
+	/**
+	 * his method is used to create Driver object
+	 * @throws Exception 
+	 * @return Returns the driver object
+	 */
 	public AppiumDriver<MobileElement> initiateDriver()throws Exception{
 		try {
 			if(data.get("Platform").equalsIgnoreCase("android"))
@@ -131,32 +134,6 @@ public class BasePage {
 			System.out.println("The Object identifiaction Failed for the element "+element+" due to NoSuchElementException");
 			return false;
 		}		
-	}
-	
-	/**
-	 * This method is used to check the element is Displayed with dynamic time
-	 * @param ele : will define MobileElement value and integer value
-	 * @param int : will define integer value
-	 * @throws Exception 
-	 */
-	protected boolean isDisplayed(MobileElement element,int time){
-		try{
-			new WebDriverWait(driver, time).until(ExpectedConditions.visibilityOf(element));
-			System.out.println("The Object identifiaction completed for the element "+element);
-			return element.isDisplayed();
-		}
-		catch(TimeoutException e){
-			System.out.println("The Object identifiaction Failed for the element "+element+" due to TimeoutException");
-			return false;
-		}
-		catch(ElementNotVisibleException e) {
-			System.out.println("The Object identifiaction Failed for the element "+element+" due to ElementNotVisibleException");
-			return false;
-		}
-		catch(NoSuchElementException e){
-			System.out.println("The Object identifiaction Failed for the element "+element+" due to NoSuchElementException");
-			return false;
-		}
 	}
 		
 	/**
@@ -239,52 +216,6 @@ public class BasePage {
 	}
 	
 	/**
-	 * @param ele : will define MobileElement value
-	 * @param int : will define Integer value
-	 * @throws Exception 
-	 */
-	protected void swipeHorizontalDown(int swipeCount, MobileElement element) throws Exception{
-		try {
-			for(int i=1;i<=swipeCount;i++) {
-				Dimension d = driver.manage().window().getSize();
-				int width = d.getWidth();
-				int height = d.getHeight();
-				
-				int middle = width/2;
-				int startPoint = (int) (height*0.3);
-				int endPoint = (int) (height*0.7);
-				
-				new TouchAction(driver)
-				.press(PointOption.point(middle, startPoint))
-				.waitAction(WaitOptions.waitOptions(Duration.ofMillis(swipeDuration)))
-				.moveTo(PointOption.point(middle, endPoint))
-				.release().perform();
-				
-				if(isDisplayed(element))
-					break;
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * This method is used to clear the text
-	 * @param ele : will define MobileElement value
-	 * @throws Exception 
-	 */
-	protected void clearText(MobileElement element){
-		try{
-			if(element.isDisplayed())
-			element.clear();
-		}
-		catch (Exception e) {
-			System.out.println("The Element is not clear due to no such element found");
-		}
-		
-	}
-	
-	/**
 	 * This Method returns the value of the corresponding key provided in the parameter
 	 * @param String : will define String property file name
 	 * @param String : will define String Key to be retrived from the same file
@@ -320,27 +251,6 @@ public class BasePage {
 		}catch(Exception e) {
 			System.out.println("Press Enter using Keyboard is not working");
 		}
-	}
-	
-	//This method is used to hide keyboard in android	
-	protected void Minimizekeyboard()throws Exception{
-		try{
-			driver.hideKeyboard();
-		}
-		catch (Exception e) {			
-			throw new Exception("The hidekeyboard button for ios is not working");
-		}
-	}
-
-	//This method is used to get the context of the page Encapsulation
-	protected String getContext(){
-		return driver.getContext();
-	}
-		
-
-	//This method is used to set the context of the page Encapsulation
-	protected void SetContext(String context){
-		driver.context(context);
 	}
 	
 	

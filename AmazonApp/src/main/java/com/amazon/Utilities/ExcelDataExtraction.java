@@ -19,6 +19,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelDataExtraction {
 	
+	/**
+	 * This is Constructor
+	 * @param String : will define the Excel file
+	 * @param String : will define the Sheet file
+	 * @return : will return ArrayList of HashMap
+	 * @throws Exception 
+	 */
+	
 	@SuppressWarnings({ "resource", "incomplete-switch" })
 	public ArrayList<HashMap<String,String>> readExcel(String excel, String sheet) throws Exception{
 		String heading="";
