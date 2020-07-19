@@ -61,7 +61,7 @@ public class AddToCart_Testcase {
 	 * @throws Exception
 	 */
 	@Test(dataProvider="amazon")
-	public void test(HashMap<String,String> data) throws Exception{
+	public void validateAddToCart(HashMap<String,String> data) throws Exception{
 		if(data.get("Testrun").equalsIgnoreCase("yes") && data.get("TestCase Name").equalsIgnoreCase("add to cart")) {
 			try {
 				AddToCart cart = new AddToCart(driver, data, logger, report);
