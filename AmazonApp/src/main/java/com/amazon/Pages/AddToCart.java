@@ -75,7 +75,6 @@ public class AddToCart extends BasePage{
 			
 			if(validateFields(btn_CartIcon,  report, logger,"Cart on the top",false))
 				click(btn_CartIcon);
-			Thread.sleep(7500);
 			if(validateFields(validateMask,  report, logger,"Added Item",false)) {
 				String expected = data.get("expected");
 				String actual = getAttribute(selectMask, "content-desc");

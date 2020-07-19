@@ -9,9 +9,7 @@ public class PreRequesiteConfig {
 	void startProject(){
 		Reporting.startReporting();
 	}
-	
 
-	
 	@AfterSuite
 	void endProject(){
 		Reporting.endReporting();

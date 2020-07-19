@@ -44,9 +44,7 @@ public class SearchProduct extends BasePage{
 		try {
 			if(validateFields(input_SearchBox, report, logger,data.get("Input Data"),true)) {
 				click(input_SearchBox);
-				Thread.sleep(1500);
 				setText(input_SearchBox, data.get("Input Data"));
-				Thread.sleep(1000);
 				pressKeyboardEnter();
 			}
 			if(validateFields(selectMask,  report, logger,"F Gear Standard Size Mask for Adult Color Black F95",true)) {

@@ -55,7 +55,6 @@ public class Reporting {
 		path=new File(System.getProperty("user.dir")+"/Report/"+sdf.format(date));
 		path.mkdirs();
 		report=new ExtentReports(path.getAbsolutePath()+"/OverallReport.html");
-	
 	}
 
 	public ExtentTest startTest(String name){
