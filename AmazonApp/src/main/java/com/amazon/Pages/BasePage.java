@@ -146,7 +146,7 @@ public class BasePage {
 		try {
 			return element.getAttribute(propertyName);
 		}catch (Exception e) {
-		return "Object Not Found No value is  retrived";
+			return "Object Not Found No value is  retrived";
 		}
 	}
 
@@ -176,7 +176,7 @@ public class BasePage {
 				element.sendKeys(value);
 			}
 			else{
-				System.out.println("Element not found for SetText");
+				throw new Exception("Element not found for SetText");
 			}
 		}catch (Exception e1) {
 			e1.printStackTrace();
@@ -249,7 +249,7 @@ public class BasePage {
 		try {
 			driver.getKeyboard().sendKeys(Keys.ENTER);
 		}catch(Exception e) {
-			System.out.println("Press Enter using Keyboard is not working");
+			throw new Exception("Press Enter using Keyboard is not working");
 		}
 	}
 	

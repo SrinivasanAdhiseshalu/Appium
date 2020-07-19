@@ -57,7 +57,6 @@ public class LoginPage extends BasePage{
 			if(validateFields(btn_SkipSignIn,  report, logger,"Skip Sign IN",true))
 				click(btn_SkipSignIn);
 		}catch(Exception e) {
-			System.out.println();
 			e.printStackTrace();
 		}
 	}

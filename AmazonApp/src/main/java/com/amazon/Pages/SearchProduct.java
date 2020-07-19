@@ -71,7 +71,6 @@ public class SearchProduct extends BasePage{
 			}
 			
 		}catch(Exception e) {
-			System.out.println();
 			report.reportFail("Error in validation", logger);
 			e.printStackTrace();
 		}
