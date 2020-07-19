@@ -1,0 +1,7 @@
+The Object identifiaction completed for the element Located by By.chained({By.xpath: //android.widget.GridLayout/descendant::android.widget.ImageView[1]})
+The Object identifiaction completed for the element Located by By.chained({By.xpath: //android.widget.Button[contains(@text,'Skip sign in')]})
+The Object identifiaction completed for the element Located by By.chained({By.xpath: //*[@resource-id='in.amazon.mShop.android.shopping:id/rs_search_src_text' and (contains(@text,'Search'))]})
+The Object identifiaction completed for the element Located by By.chained({By.xpath: //*[@resource-id='in.amazon.mShop.android.shopping:id/rs_search_src_text' and (contains(@text,'Search'))]})
+The Object identifiaction completed for the element Located by By.chained({By.xpath: //android.view.View[@resource-id='search']/descendant::android.view.View[contains(@content-desc,'F Gear Standard Size Mask for Adult Color Black F95 Safeguard 7 layer')]})
+The Object identifiaction completed for the element Located by By.chained({By.xpath: //android.widget.Button[@resource-id='add-to-cart-button']})
+The Object identifiaction completed for the element Located by By.chained({By.xpath: //*[@resource-id='in.amazon.mShop.android.shopping:id/action_bar_cart']})

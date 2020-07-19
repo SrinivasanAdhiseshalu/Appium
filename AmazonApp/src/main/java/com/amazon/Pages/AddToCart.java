@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import com.amazon.PageObjects.OR_AmazonAddToCart;
+import com.amazon.PageObjects.BasePage;
 import com.amazon.Utilities.Reporting;
 import com.relevantcodes.extentreports.ExtentTest;
 
@@ -14,19 +14,33 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class AddToCart extends OR_AmazonAddToCart{
+public class AddToCart extends BasePage{
+	
 	@SuppressWarnings("rawtypes")
 	AppiumDriver driver=null;
 	HashMap<String,String> data = new HashMap<String,String>();
 	Reporting report=null;
 	ExtentTest logger = null;
 	
+	@AndroidFindBy(xpath="//android.widget.Button[@resource-id='add-to-cart-button']")
+	protected MobileElement btn_AddToCart;
+	
+	@AndroidFindBy(xpath="//*[@resource-id='in.amazon.mShop.android.shopping:id/action_bar_cart']")
+	protected MobileElement btn_CartIcon;
+	
+	@AndroidFindBy(xpath="//android.view.View[contains(@content-desc,'F Gear Standard Size Mask for Adult Color Black F95')]")
+	protected MobileElement validateMask;
+	
+	@AndroidFindBy(xpath="//android.view.View[@resource-id='search']/descendant::android.view.View[contains(@content-desc,'F Gear Standard Size Mask for Adult Color Black F95 Safeguard 7 layer')]")
+	protected MobileElement selectMask;
+	
 	//Constructor
 	@SuppressWarnings("rawtypes")
 	public AddToCart(AppiumDriver driver, HashMap<String,String> data,ExtentTest logger,Reporting report) {
-		super(driver, data);
+		super(data);
 		this.driver = driver;
 		this.data = data;
 		this.logger = logger;
@@ -34,67 +48,15 @@ public class AddToCart extends OR_AmazonAddToCart{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
-	
-	//launch screen validation method
-	public void launchtoSearchScreen() throws Exception{
-		try {
-			if(validateFields(chooseLang, "Language Selection",true))
-				click(chooseLang);
-			if(validateFields(btn_SkipSignIn, "Skip Sign IN",true))
-				click(btn_SkipSignIn);
-			validateFields(input_SearchBox, "input_SearchBox",true);
-		}catch(Exception e) {
-			System.out.println();
-			e.printStackTrace();
-		}
-	}
-	
-	//Search product in amazon method
-	@SuppressWarnings("deprecation")
-	public void searchProduct() throws Exception{
-		try {
-			if(validateFields(input_SearchBox, data.get("Input Data"),true)) {
-				click(input_SearchBox);
-				Thread.sleep(1500);
-				setText(input_SearchBox, data.get("Input Data"));
-				Thread.sleep(1000);
-				pressKeyboardEnter();
-			}
-			if(validateFields(selectMask, "F Gear Standard Size Mask for Adult Color Black F95",true)) {
-				data.put("expected", getAttribute(selectMask, "content-desc"));
-				click(selectMask);
-			}
-			else {
-				swipeHorizontalUP(10, selectMask);
-				if(isDisplayed(selectMask)) {
-					report.reportPass("F Gear Standard Size Mask for Adult Color Black F95", logger);
-					click(selectMask);
-				}
-				else {
-					report.reportFail("Expected Mask", logger);
-					throw new Exception();
-				}
-			}
-			
-		}catch(Exception e) {
-			System.out.println();
-			report.reportFail("Error in validation", logger);
-			e.printStackTrace();
-		}
-	}
-	
-	//Addn an item to cart in amazon method
+	/**
+	 * This method is used to Add an item to cart in amazon method
+	 * @param NA
+	 * @throws Exception 
+	 */
 	public void addItemToCart() throws Exception{
 		try {
-			/*if(validateFields(btn_CurrentLoc, "Current Location",false))
-				click(btn_CurrentLoc);
-			if(validateFields(btn_UseCurrentLoc, "Use Current Location",false))
-				click(btn_UseCurrentLoc);
-			if(validateFields(btn_AllowOnce, "Allow Once",false))
-				click(btn_AllowOnce);
-			Thread.sleep(6000);*/
 			swipeHorizontalUP(5, btn_AddToCart);
-			if(validateFields(btn_AddToCart, "Add To Cart",true))
+			if(validateFields(btn_AddToCart, report, logger, "Add To Cart",true))
 				click(btn_AddToCart);
 			
 		}catch(Exception e) {
@@ -103,14 +65,18 @@ public class AddToCart extends OR_AmazonAddToCart{
 		}
 	}
 	
-	//validate cart in amazon method
+	/**
+	 * validate cart in amazon method
+	 * @param NA
+	 * @throws Exception 
+	 */
 	public void validateCart() throws Exception{
 		try {
 			
-			if(validateFields(btn_CartIcon, "Cart on the top",false))
+			if(validateFields(btn_CartIcon,  report, logger,"Cart on the top",false))
 				click(btn_CartIcon);
 			Thread.sleep(7500);
-			if(validateFields(validateMask, "Added Item",false)) {
+			if(validateFields(validateMask,  report, logger,"Added Item",false)) {
 				String expected = data.get("expected");
 				String actual = getAttribute(selectMask, "content-desc");
 				if(expected.contains(actual))
@@ -123,28 +89,4 @@ public class AddToCart extends OR_AmazonAddToCart{
 			e.printStackTrace();
 		}
 	}
-	
-	//common field to validate all the fields
-	boolean validateFields(MobileElement ele, String desc,boolean exception) throws Exception{
-		boolean flag = false;
-		try {
-			if(isDisplayed(ele)) {
-				report.reportPass(desc, logger);
-				Assert.assertEquals(desc, desc);
-				flag = true;
-			}
-			else {
-				report.reportFail(desc, logger);
-				Assert.fail(ele+"is not available");
-			}
-		}catch(Exception e) {
-			report.reportFail(desc, logger);
-			Assert.fail(ele+"is not available");
-			e.printStackTrace();
-			if(exception)
-				throw e;
-		}
-		return flag;
-	}
-	
 }
